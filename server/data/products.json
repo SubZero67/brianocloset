@@ -1,0 +1,604 @@
+[
+  {
+    "id": 1,
+    "name": "BMW Ashbourne Crest Hoodie",
+    "price": 6499,
+    "brand": "BMW",
+    "category": "Hoodie",
+    "image": "/catalog/bmw/bmw-ashbourne-crest-hoodie/01.png",
+    "images": [
+      "/catalog/bmw/bmw-ashbourne-crest-hoodie/01.png",
+      "/catalog/bmw/bmw-ashbourne-crest-hoodie/02.png"
+    ],
+    "description": "BMW Ashbourne Crest Hoodie is a premium BMW hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "BMW Belgrave Polo T-shirt",
+    "price": 3999,
+    "brand": "BMW",
+    "category": "Polo T-shirt",
+    "image": "/catalog/bmw/bmw-belgrave-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/bmw/bmw-belgrave-polo-t-shirt/01.jpeg"
+    ],
+    "description": "BMW Belgrave Polo T-shirt is a polished BMW polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "BMW Marlowe T-shirt",
+    "price": 3299,
+    "brand": "BMW",
+    "category": "T-shirts",
+    "image": "/catalog/bmw/bmw-marlowe-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/bmw/bmw-marlowe-t-shirt/01.jpeg",
+      "/catalog/bmw/bmw-marlowe-t-shirt/02.jpeg"
+    ],
+    "description": "BMW Marlowe T-shirt is a premium BMW tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "name": "BMW Westbury T-shirt",
+    "price": 3299,
+    "brand": "BMW",
+    "category": "T-shirts",
+    "image": "/catalog/bmw/bmw-westbury-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/bmw/bmw-westbury-t-shirt/01.jpeg",
+      "/catalog/bmw/bmw-westbury-t-shirt/02.jpeg"
+    ],
+    "description": "BMW Westbury T-shirt is a premium BMW tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "Couple Set Hoodies Hawthorne Pair Hoodie",
+    "price": 6499,
+    "brand": "Couple Set Hoodies",
+    "category": "Couple hoodies",
+    "image": "/catalog/couple-set-hoodies/couple-set-hoodies-hawthorne-pair-hoodie/01.png",
+    "images": [
+      "/catalog/couple-set-hoodies/couple-set-hoodies-hawthorne-pair-hoodie/01.png"
+    ],
+    "description": "Couple Set Hoodies Hawthorne Pair Hoodie is a coordinated matching hoodie set with a tailored luxury-streetwear feel, elevated fabric presence, and a refined couples styling mood.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "name": "Couple Set Hoodies Regency Couple Hoodie",
+    "price": 6499,
+    "brand": "Couple Set Hoodies",
+    "category": "Couple hoodies",
+    "image": "/catalog/couple-set-hoodies/couple-set-hoodies-regency-couple-hoodie/01.jpeg",
+    "images": [
+      "/catalog/couple-set-hoodies/couple-set-hoodies-regency-couple-hoodie/01.jpeg",
+      "/catalog/couple-set-hoodies/couple-set-hoodies-regency-couple-hoodie/02.jpeg"
+    ],
+    "description": "Couple Set Hoodies Regency Couple Hoodie is a coordinated matching hoodie set with a tailored luxury-streetwear feel, elevated fabric presence, and a refined couples styling mood.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "Couple Set Hoodies Sterling Match Hoodie",
+    "price": 6499,
+    "brand": "Couple Set Hoodies",
+    "category": "Couple hoodies",
+    "image": "/catalog/couple-set-hoodies/couple-set-hoodies-sterling-match-hoodie/01.png",
+    "images": [
+      "/catalog/couple-set-hoodies/couple-set-hoodies-sterling-match-hoodie/01.png"
+    ],
+    "description": "Couple Set Hoodies Sterling Match Hoodie is a coordinated matching hoodie set with a tailored luxury-streetwear feel, elevated fabric presence, and a refined couples styling mood.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "Couple Set Hoodies Langford Duet Hoodie",
+    "price": 6499,
+    "brand": "Couple Set Hoodies",
+    "category": "Couple hoodies",
+    "image": "/catalog/couple-set-hoodies/couple-set-hoodies-langford-duet-hoodie/01.jpeg",
+    "images": [
+      "/catalog/couple-set-hoodies/couple-set-hoodies-langford-duet-hoodie/01.jpeg",
+      "/catalog/couple-set-hoodies/couple-set-hoodies-langford-duet-hoodie/02.jpeg"
+    ],
+    "description": "Couple Set Hoodies Langford Duet Hoodie is a coordinated matching hoodie set with a tailored luxury-streetwear feel, elevated fabric presence, and a refined couples styling mood.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "name": "Fast & Furious Monterey GTR Hoodie",
+    "price": 6499,
+    "brand": "Fast & Furious",
+    "category": "Hoodie",
+    "image": "/catalog/fast-furious/fast-furious-monterey-gtr-hoodie/01.jpeg",
+    "images": [
+      "/catalog/fast-furious/fast-furious-monterey-gtr-hoodie/01.jpeg",
+      "/catalog/fast-furious/fast-furious-monterey-gtr-hoodie/02.png"
+    ],
+    "description": "Fast & Furious Monterey GTR Hoodie is a premium Fast & Furious hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "name": "Fast & Furious Monaco GTR Polo T-shirt",
+    "price": 3999,
+    "brand": "Fast & Furious",
+    "category": "Polo T-shirt",
+    "image": "/catalog/fast-furious/fast-furious-monaco-gtr-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/fast-furious/fast-furious-monaco-gtr-polo-t-shirt/01.jpeg"
+    ],
+    "description": "Fast & Furious Monaco GTR Polo T-shirt is a polished Fast & Furious polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "name": "Fast & Furious Monaco GTR Polo T-shirt 2",
+    "price": 3999,
+    "brand": "Fast & Furious",
+    "category": "Polo T-shirt",
+    "image": "/catalog/fast-furious/fast-furious-monaco-gtr-polo-t-shirt-2/01.jpeg",
+    "images": [
+      "/catalog/fast-furious/fast-furious-monaco-gtr-polo-t-shirt-2/01.jpeg"
+    ],
+    "description": "Fast & Furious Monaco GTR Polo T-shirt 2 is a polished Fast & Furious polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 12,
+    "name": "Fast & Furious Cavendish GTR T-shirt",
+    "price": 3299,
+    "brand": "Fast & Furious",
+    "category": "T-shirts",
+    "image": "/catalog/fast-furious/fast-furious-cavendish-gtr-t-shirt/01.png",
+    "images": [
+      "/catalog/fast-furious/fast-furious-cavendish-gtr-t-shirt/01.png",
+      "/catalog/fast-furious/fast-furious-cavendish-gtr-t-shirt/02.jpeg"
+    ],
+    "description": "Fast & Furious Cavendish GTR T-shirt is a premium Fast & Furious tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 13,
+    "name": "Fast & Furious Cavendish GTR T-shirt 2",
+    "price": 3299,
+    "brand": "Fast & Furious",
+    "category": "T-shirts",
+    "image": "/catalog/fast-furious/fast-furious-cavendish-gtr-t-shirt-2/01.jpeg",
+    "images": [
+      "/catalog/fast-furious/fast-furious-cavendish-gtr-t-shirt-2/01.jpeg",
+      "/catalog/fast-furious/fast-furious-cavendish-gtr-t-shirt-2/02.jpeg"
+    ],
+    "description": "Fast & Furious Cavendish GTR T-shirt 2 is a premium Fast & Furious tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 14,
+    "name": "Ferrari Rosso Manor Hoodie",
+    "price": 6499,
+    "brand": "Ferrari",
+    "category": "Hoodie",
+    "image": "/catalog/ferrari/ferrari-rosso-manor-hoodie/01.png",
+    "images": [
+      "/catalog/ferrari/ferrari-rosso-manor-hoodie/01.png",
+      "/catalog/ferrari/ferrari-rosso-manor-hoodie/02.png"
+    ],
+    "description": "Ferrari Rosso Manor Hoodie is a premium Ferrari hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 15,
+    "name": "Ferrari Portofino Polo T-shirt",
+    "price": 3999,
+    "brand": "Ferrari",
+    "category": "Polo T-shirt",
+    "image": "/catalog/ferrari/ferrari-portofino-polo-t-shirt/01.png",
+    "images": [
+      "/catalog/ferrari/ferrari-portofino-polo-t-shirt/01.png",
+      "/catalog/ferrari/ferrari-portofino-polo-t-shirt/02.jpeg",
+      "/catalog/ferrari/ferrari-portofino-polo-t-shirt/03.jpeg"
+    ],
+    "description": "Ferrari Portofino Polo T-shirt is a polished Ferrari polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 16,
+    "name": "Ferrari Maranello Polo T-shirt",
+    "price": 3999,
+    "brand": "Ferrari",
+    "category": "Polo T-shirt",
+    "image": "/catalog/ferrari/ferrari-maranello-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/ferrari/ferrari-maranello-polo-t-shirt/01.jpeg"
+    ],
+    "description": "Ferrari Maranello Polo T-shirt is a polished Ferrari polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 17,
+    "name": "Ferrari Valentino T-shirt",
+    "price": 3299,
+    "brand": "Ferrari",
+    "category": "T-shirts",
+    "image": "/catalog/ferrari/ferrari-valentino-t-shirt/01.png",
+    "images": [
+      "/catalog/ferrari/ferrari-valentino-t-shirt/01.png",
+      "/catalog/ferrari/ferrari-valentino-t-shirt/02.jpeg"
+    ],
+    "description": "Ferrari Valentino T-shirt is a premium Ferrari tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 18,
+    "name": "Ferrari Scuderia House T-shirt",
+    "price": 3299,
+    "brand": "Ferrari",
+    "category": "T-shirts",
+    "image": "/catalog/ferrari/ferrari-scuderia-house-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/ferrari/ferrari-scuderia-house-t-shirt/01.jpeg",
+      "/catalog/ferrari/ferrari-scuderia-house-t-shirt/02.jpeg"
+    ],
+    "description": "Ferrari Scuderia House T-shirt is a premium Ferrari tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 19,
+    "name": "Lambo Savile Bull Hoodie",
+    "price": 6499,
+    "brand": "Lambo",
+    "category": "Hoodie",
+    "image": "/catalog/lambo/lambo-savile-bull-hoodie/01.png",
+    "images": [
+      "/catalog/lambo/lambo-savile-bull-hoodie/01.png",
+      "/catalog/lambo/lambo-savile-bull-hoodie/02.png"
+    ],
+    "description": "Lambo Savile Bull Hoodie is a premium Lambo hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 20,
+    "name": "Lambo Aurelio Polo T-shirt",
+    "price": 3999,
+    "brand": "Lambo",
+    "category": "Polo T-shirt",
+    "image": "/catalog/lambo/lambo-aurelio-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/lambo/lambo-aurelio-polo-t-shirt/01.jpeg"
+    ],
+    "description": "Lambo Aurelio Polo T-shirt is a polished Lambo polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 21,
+    "name": "Lambo Milano Polo T-shirt",
+    "price": 3999,
+    "brand": "Lambo",
+    "category": "Polo T-shirt",
+    "image": "/catalog/lambo/lambo-milano-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/lambo/lambo-milano-polo-t-shirt/01.jpeg",
+      "/catalog/lambo/lambo-milano-polo-t-shirt/02.jpeg",
+      "/catalog/lambo/lambo-milano-polo-t-shirt/03.jpeg"
+    ],
+    "description": "Lambo Milano Polo T-shirt is a polished Lambo polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 22,
+    "name": "Lambo Torino T-shirt",
+    "price": 3299,
+    "brand": "Lambo",
+    "category": "T-shirts",
+    "image": "/catalog/lambo/lambo-torino-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/lambo/lambo-torino-t-shirt/01.jpeg",
+      "/catalog/lambo/lambo-torino-t-shirt/02.jpeg"
+    ],
+    "description": "Lambo Torino T-shirt is a premium Lambo tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 23,
+    "name": "Lambo Cortina T-shirt",
+    "price": 3299,
+    "brand": "Lambo",
+    "category": "T-shirts",
+    "image": "/catalog/lambo/lambo-cortina-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/lambo/lambo-cortina-t-shirt/01.jpeg",
+      "/catalog/lambo/lambo-cortina-t-shirt/02.jpeg"
+    ],
+    "description": "Lambo Cortina T-shirt is a premium Lambo tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 24,
+    "name": "Porsche Stuttgart Club Hoodie",
+    "price": 6499,
+    "brand": "Porsche",
+    "category": "Hoodie",
+    "image": "/catalog/porsche/porsche-stuttgart-club-hoodie/01.png",
+    "images": [
+      "/catalog/porsche/porsche-stuttgart-club-hoodie/01.png",
+      "/catalog/porsche/porsche-stuttgart-club-hoodie/02.png"
+    ],
+    "description": "Porsche Stuttgart Club Hoodie is a premium Porsche hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 25,
+    "name": "Porsche Baden Polo T-shirt",
+    "price": 3999,
+    "brand": "Porsche",
+    "category": "Polo T-shirt",
+    "image": "/catalog/porsche/porsche-baden-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/porsche/porsche-baden-polo-t-shirt/01.jpeg",
+      "/catalog/porsche/porsche-baden-polo-t-shirt/02.jpeg",
+      "/catalog/porsche/porsche-baden-polo-t-shirt/03.jpeg"
+    ],
+    "description": "Porsche Baden Polo T-shirt is a polished Porsche polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 26,
+    "name": "Porsche Zuffenhausen Polo T-shirt",
+    "price": 3999,
+    "brand": "Porsche",
+    "category": "Polo T-shirt",
+    "image": "/catalog/porsche/porsche-zuffenhausen-polo-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/porsche/porsche-zuffenhausen-polo-t-shirt/01.jpeg"
+    ],
+    "description": "Porsche Zuffenhausen Polo T-shirt is a polished Porsche polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 27,
+    "name": "Porsche Briarwood T-shirt",
+    "price": 3299,
+    "brand": "Porsche",
+    "category": "T-shirts",
+    "image": "/catalog/porsche/porsche-briarwood-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/porsche/porsche-briarwood-t-shirt/01.jpeg",
+      "/catalog/porsche/porsche-briarwood-t-shirt/02.jpeg"
+    ],
+    "description": "Porsche Briarwood T-shirt is a premium Porsche tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 28,
+    "name": "Porsche Kingsley T-shirt",
+    "price": 3299,
+    "brand": "Porsche",
+    "category": "T-shirts",
+    "image": "/catalog/porsche/porsche-kingsley-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/porsche/porsche-kingsley-t-shirt/01.jpeg",
+      "/catalog/porsche/porsche-kingsley-t-shirt/02.jpeg"
+    ],
+    "description": "Porsche Kingsley T-shirt is a premium Porsche tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 29,
+    "name": "The OG's Shelby Estate Hoodie",
+    "price": 6499,
+    "brand": "The OG's",
+    "category": "Hoodie",
+    "image": "/catalog/the-og-s/the-og-s-shelby-estate-hoodie/01.png",
+    "images": [
+      "/catalog/the-og-s/the-og-s-shelby-estate-hoodie/01.png",
+      "/catalog/the-og-s/the-og-s-shelby-estate-hoodie/02.png"
+    ],
+    "description": "The OG's Shelby Estate Hoodie is a premium The OG's hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 30,
+    "name": "The OG's Defender House Polo T-shirt",
+    "price": 3999,
+    "brand": "The OG's",
+    "category": "Polo T-shirt",
+    "image": "/catalog/the-og-s/the-og-s-defender-house-polo-t-shirt/01.png",
+    "images": [
+      "/catalog/the-og-s/the-og-s-defender-house-polo-t-shirt/01.png",
+      "/catalog/the-og-s/the-og-s-defender-house-polo-t-shirt/02.jpeg",
+      "/catalog/the-og-s/the-og-s-defender-house-polo-t-shirt/03.jpeg"
+    ],
+    "description": "The OG's Defender House Polo T-shirt is a polished The OG's polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 31,
+    "name": "The OG's Defender Heritage T-shirt",
+    "price": 3299,
+    "brand": "The OG's",
+    "category": "T-shirts",
+    "image": "/catalog/the-og-s/the-og-s-defender-heritage-t-shirt/01.jpeg",
+    "images": [
+      "/catalog/the-og-s/the-og-s-defender-heritage-t-shirt/01.jpeg",
+      "/catalog/the-og-s/the-og-s-defender-heritage-t-shirt/02.jpeg"
+    ],
+    "description": "The OG's Defender Heritage T-shirt is a premium The OG's tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 32,
+    "name": "The OG's Defender Heritage T-shirt 2",
+    "price": 3299,
+    "brand": "The OG's",
+    "category": "T-shirts",
+    "image": "/catalog/the-og-s/the-og-s-defender-heritage-t-shirt-2/01.jpeg",
+    "images": [
+      "/catalog/the-og-s/the-og-s-defender-heritage-t-shirt-2/01.jpeg",
+      "/catalog/the-og-s/the-og-s-defender-heritage-t-shirt-2/02.jpeg"
+    ],
+    "description": "The OG's Defender Heritage T-shirt 2 is a premium The OG's tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "stock": 25,
+    "isActive": true
+  },
+  {
+    "id": 33,
+    "name": "Toys Mayfair Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-mayfair-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-mayfair-collector-car/01.jpeg"
+    ],
+    "description": "Toys Mayfair Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 34,
+    "name": "Toys Kensington Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-kensington-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-kensington-collector-car/01.jpeg"
+    ],
+    "description": "Toys Kensington Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 35,
+    "name": "Toys Grosvenor Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-grosvenor-collector-car/01.png",
+    "images": [
+      "/catalog/toys/toys-grosvenor-collector-car/01.png"
+    ],
+    "description": "Toys Grosvenor Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 36,
+    "name": "Toys Windsor Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-windsor-collector-car/01.png",
+    "images": [
+      "/catalog/toys/toys-windsor-collector-car/01.png"
+    ],
+    "description": "Toys Windsor Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 37,
+    "name": "Toys Richmond Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-richmond-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-richmond-collector-car/01.jpeg"
+    ],
+    "description": "Toys Richmond Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 38,
+    "name": "Toys Ascot Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-ascot-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-ascot-collector-car/01.jpeg"
+    ],
+    "description": "Toys Ascot Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 39,
+    "name": "Toys Belmont Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-belmont-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-belmont-collector-car/01.jpeg"
+    ],
+    "description": "Toys Belmont Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 40,
+    "name": "Toys Fairmont Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-fairmont-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-fairmont-collector-car/01.jpeg"
+    ],
+    "description": "Toys Fairmont Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  },
+  {
+    "id": 41,
+    "name": "Toys Arlington Collector Car",
+    "price": 2499,
+    "brand": "Toys",
+    "category": "Toys (cars)",
+    "image": "/catalog/toys/toys-arlington-collector-car/01.jpeg",
+    "images": [
+      "/catalog/toys/toys-arlington-collector-car/01.jpeg"
+    ],
+    "description": "Toys Arlington Collector Car is a display-ready collectible with a premium finish, clean automotive styling, and an easy shelf presence for enthusiasts and gift buyers alike.",
+    "stock": 18,
+    "isActive": true
+  }
+]
