@@ -9,29 +9,29 @@ export function CatalogProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
-  useEffect(() => {
-    async function loadProducts() {
-      setLoading(true)
+  async function refreshProducts() {
+    setLoading(true)
 
-      try {
-        const response = await fetch(buildApiUrl("/api/products"))
-        const data = await response.json()
+    try {
+      const response = await fetch(buildApiUrl("/api/products"))
+      const data = await response.json()
 
-        if (!response.ok) {
-          throw new Error(data.message || "Unable to load products.")
-        }
-
-        setProducts(data.products || [])
-        setError("")
-      } catch (nextError) {
-        setError(nextError.message || "Unable to load products.")
-        setProducts([])
-      } finally {
-        setLoading(false)
+      if (!response.ok) {
+        throw new Error(data.message || "Unable to load products.")
       }
-    }
 
-    loadProducts()
+      setProducts(data.products || [])
+      setError("")
+    } catch (nextError) {
+      setError(nextError.message || "Unable to load products.")
+      setProducts([])
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    refreshProducts()
   }, [])
 
   return (
@@ -39,7 +39,8 @@ export function CatalogProvider({ children }) {
       value={{
         products,
         loading,
-        error
+        error,
+        refreshProducts
       }}
     >
       {children}

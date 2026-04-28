@@ -13,6 +13,7 @@ import {
   updateAdminOrder,
   updateAdminProduct
 } from "../services/admin"
+import { useCatalog } from "../context/CatalogContext"
 import categoriesList from "../data/categories"
 import { productRequiresSize } from "../utils/productOptions"
 import { formatPrice } from "../utils/formatPrice"
@@ -35,6 +36,7 @@ const initialProductForm = {
 }
 
 function Admin() {
+  const { refreshProducts } = useCatalog()
   const [token, setToken] = useState(() => getAdminToken())
   const [activeTab, setActiveTab] = useState("products")
   const [products, setProducts] = useState([])
@@ -157,10 +159,12 @@ function Admin() {
         setProducts((prev) =>
           prev.map((item) => (item.id === product.id ? product : item))
         )
+        await refreshProducts()
         setPanelMessage("Product updated.")
       } else {
         const { product } = await createAdminProduct(payload)
         setProducts((prev) => [product, ...prev])
+        await refreshProducts()
         setPanelMessage("Product created.")
       }
 
@@ -216,6 +220,7 @@ function Admin() {
     try {
       await deleteAdminProduct(editingProductId)
       setProducts((prev) => prev.filter((item) => item.id !== editingProductId))
+      await refreshProducts()
       setEditingProductId(null)
       setProductForm(initialProductForm)
       setActiveTab("products")
