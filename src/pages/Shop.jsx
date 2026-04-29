@@ -58,6 +58,14 @@ function Shop() {
     return brandMatch && categoryMatch
   })
 
+  function selectBrand(brandName) {
+    updateFilters(brandName, "All")
+  }
+
+  function selectCategory(category) {
+    updateFilters("All", category)
+  }
+
   function filterClass(isActive) {
     return isActive
       ? "border-[#d6b37b] bg-[#d6b37b]/10 text-white"
@@ -97,7 +105,7 @@ function Shop() {
             <p className="section-label">Brand filter</p>
             <div className="flex flex-wrap gap-3">
               <button
-                onClick={() => updateFilters("All", selectedCategory)}
+                onClick={() => selectBrand("All")}
                 className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] transition ${filterClass(
                   selectedBrand === "All"
                 )}`}
@@ -110,7 +118,7 @@ function Shop() {
                 .map((brandName) => (
                 <button
                   key={brandName}
-                  onClick={() => updateFilters(brandName, selectedCategory)}
+                  onClick={() => selectBrand(brandName)}
                   className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] transition ${filterClass(
                     selectedBrand === brandName
                   )}`}
@@ -127,7 +135,7 @@ function Shop() {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => updateFilters(selectedBrand, category)}
+                  onClick={() => selectCategory(category)}
                   className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] transition ${filterClass(
                     selectedCategory === category
                   )}`}
