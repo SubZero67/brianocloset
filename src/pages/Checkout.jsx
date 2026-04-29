@@ -119,6 +119,11 @@ function Checkout() {
         }
       })
     } catch (checkoutError) {
+      if (checkoutError.setupRequired) {
+        navigate("/checkout/setup")
+        return
+      }
+
       setError(checkoutError.message)
     } finally {
       setSubmitting(false)

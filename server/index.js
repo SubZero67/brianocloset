@@ -387,15 +387,10 @@ async function handleRazorpayCheckout(request, response) {
     const payment = buildRazorpayCheckout(orderInput)
 
     if (payment.mode === "mock") {
-      await createOrderRecord(orderInput, payment.merchantOrderId, payment.mode, request, {
-        provider: "razorpay",
-        mock: true
-      })
-
-      sendJson(request, response, 200, {
-        merchantOrderId: payment.merchantOrderId,
-        redirectUrl: `${serverEnv.serverUrl}/api/payments/razorpay/mock-success?merchantOrderId=${payment.merchantOrderId}`,
-        mode: "mock"
+      sendJson(request, response, 503, {
+        message: "Payment gateway is not connected yet.",
+        setupRequired: true,
+        mode: "setup"
       })
       return
     }
@@ -605,21 +600,9 @@ async function handleRazorpayWebhook(request, response) {
 }
 
 async function handleMockPaymentSuccess(request, response, merchantOrderId) {
-  try {
-    await markOrderPaid(merchantOrderId, {
-      source: "mock-payment-success"
-    })
-
-    response.writeHead(302, {
-      Location: `${serverEnv.frontendUrl}/checkout/success?merchantOrderId=${merchantOrderId}`,
-      "Access-Control-Allow-Origin": serverEnv.frontendUrl
-    })
-    response.end()
-  } catch (error) {
-    sendJson(request, response, 404, {
-      message: error.message
-    })
-  }
+  sendJson(request, response, 410, {
+    message: "Mock payment success is disabled."
+  })
 }
 
 async function handleAdminLogin(request, response) {
@@ -944,14 +927,20 @@ async function handleOrderDelete(request, response, orderId) {
     return
   }
 
+  const products = await readCollection("products")
+
   if (order.paymentStatus === "paid") {
-    sendJson(request, response, 409, {
-      message: "Paid orders cannot be deleted."
-    })
-    return
+    for (const item of order.items) {
+      const product = products.find((entry) => entry.id === item.productId)
+
+      if (product) {
+        product.stock += Number(item.quantity) || 0
+      }
+    }
   }
 
   const nextOrders = orders.filter((entry) => entry.id !== numericOrderId)
+  await writeCollection("products", products)
   await writeCollection("orders", nextOrders)
 
   await writeAuditLog({

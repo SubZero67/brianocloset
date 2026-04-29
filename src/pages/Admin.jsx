@@ -188,7 +188,7 @@ function Admin() {
 
   async function handleDeleteOrder(orderId) {
     const confirmed = window.confirm(
-      "Delete this order? Paid orders are protected and cannot be removed."
+      "Delete this order? If it was paid, its items will be added back to stock."
     )
 
     if (!confirmed) {
@@ -198,6 +198,8 @@ function Admin() {
     try {
       await deleteAdminOrder(orderId)
       setOrders((prev) => prev.filter((item) => item.id !== orderId))
+      await loadAdminData()
+      await refreshProducts()
       setPanelMessage(`Order #${orderId} deleted.`)
     } catch (error) {
       setPanelMessage(error.message)
@@ -550,15 +552,13 @@ function Admin() {
                     <option value="cancelled">cancelled</option>
                   </select>
 
-                  {order.paymentStatus !== "paid" && (
-                    <button
-                      type="button"
-                      onClick={() => handleDeleteOrder(order.id)}
-                      className="rounded-full border border-red-400/30 px-4 py-3 text-xs uppercase tracking-[0.28em] text-red-200 transition hover:border-red-300 hover:bg-red-400/10"
-                    >
-                      Delete Order
-                    </button>
-                  )}
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteOrder(order.id)}
+                    className="rounded-full border border-red-400/30 px-4 py-3 text-xs uppercase tracking-[0.28em] text-red-200 transition hover:border-red-300 hover:bg-red-400/10"
+                  >
+                    Delete Order
+                  </button>
                 </div>
               </div>
 

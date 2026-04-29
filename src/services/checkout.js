@@ -60,7 +60,9 @@ export async function createRazorpayCheckout(order) {
   const data = await response.json()
 
   if (!response.ok) {
-    throw new Error(data.message || "Unable to start Razorpay checkout.")
+    const error = new Error(data.message || "Unable to start Razorpay checkout.")
+    error.setupRequired = Boolean(data.setupRequired)
+    throw error
   }
 
   return {
