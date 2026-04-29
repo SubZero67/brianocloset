@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
 import logo from "../assets/logo.png"
@@ -8,12 +8,41 @@ import CartSidebar from "./CartSidebar"
 function Navbar() {
   const { pathname } = useLocation()
   const { cart, cartOpen, openCart, closeCart } = useContext(CartContext)
+  const [isVisible, setIsVisible] = useState(true)
 
   const isHome = pathname === "/"
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY < 24) {
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+
+      lastScrollY = currentScrollY
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <>
-      <nav className="fixed left-0 top-0 z-40 w-full px-5 py-4 sm:px-8 lg:px-12 xl:px-16">
+      <nav
+        className={`fixed left-0 top-0 z-40 w-full px-5 py-4 transition-transform duration-300 sm:px-8 lg:px-12 xl:px-16 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div
           className={`mx-auto flex max-w-[1440px] items-center justify-between rounded-full border px-4 py-3 text-white backdrop-blur-xl sm:px-6 ${
             isHome
