@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 
+import heroPoster from "../assets/brand-bg/fnf.jpg"
 import logo from "../assets/logo.png"
 import video from "../assets/drift.mp4"
 import { useCatalog } from "../context/CatalogContext"
@@ -22,12 +23,20 @@ function Home() {
   return (
     <div className="bg-black text-white">
       <section className="relative min-h-screen overflow-hidden">
+        <img
+          src={heroPoster}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
+        />
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          preload="metadata"
+          poster={heroPoster}
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
         >
           <source src={video} type="video/mp4" />
         </video>
