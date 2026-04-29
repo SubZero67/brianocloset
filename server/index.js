@@ -1,6 +1,6 @@
 import http from "node:http"
 import crypto from "node:crypto"
-import { createReadStream, existsSync } from "node:fs"
+import { createReadStream, existsSync, statSync } from "node:fs"
 import path from "node:path"
 import { URL } from "node:url"
 
@@ -979,47 +979,106 @@ async function handleOrderGet(request, response, merchantOrderId) {
   sendJson(request, response, 200, { order })
 }
 
-function sendFile(response, filePath) {
+function buildStaticCacheControl(filePath) {
+  return filePath.includes(`${path.sep}assets${path.sep}`) || filePath.includes(`${path.sep}catalog${path.sep}`)
+    ? "public, max-age=31536000, immutable"
+    : "public, max-age=300"
+}
+
+function sendFile(request, response, filePath) {
   const ext = path.extname(filePath).toLowerCase()
   const contentType = contentTypes[ext] || "application/octet-stream"
+  const cacheControl = buildStaticCacheControl(filePath)
+  const fileSize = statSync(filePath).size
+  const rangeHeader = request.headers.range
+
+  if (rangeHeader) {
+    const match = rangeHeader.match(/bytes=(\d*)-(\d*)/)
+
+    if (!match) {
+      response.writeHead(416, {
+        "Content-Range": `bytes */${fileSize}`
+      })
+      response.end()
+      return
+    }
+
+    const start = match[1] ? Number(match[1]) : 0
+    const end = match[2] ? Number(match[2]) : fileSize - 1
+
+    if (
+      !Number.isFinite(start) ||
+      !Number.isFinite(end) ||
+      start < 0 ||
+      end >= fileSize ||
+      start > end
+    ) {
+      response.writeHead(416, {
+        "Content-Range": `bytes */${fileSize}`
+      })
+      response.end()
+      return
+    }
+
+    response.writeHead(206, {
+      "Content-Type": contentType,
+      "Content-Length": String(end - start + 1),
+      "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+      "Accept-Ranges": "bytes",
+      "Cache-Control": cacheControl,
+      "X-Content-Type-Options": "nosniff"
+    })
+
+    if (request.method === "HEAD") {
+      response.end()
+      return
+    }
+
+    createReadStream(filePath, { start, end }).pipe(response)
+    return
+  }
 
   response.writeHead(200, {
     "Content-Type": contentType,
-    "Cache-Control":
-      filePath.includes(`${path.sep}assets${path.sep}`) || filePath.includes(`${path.sep}catalog${path.sep}`)
-        ? "public, max-age=31536000, immutable"
-        : "public, max-age=300",
+    "Content-Length": String(fileSize),
+    "Accept-Ranges": "bytes",
+    "Cache-Control": cacheControl,
     "X-Content-Type-Options": "nosniff"
   })
+
+  if (request.method === "HEAD") {
+    response.end()
+    return
+  }
 
   createReadStream(filePath).pipe(response)
 }
 
-function tryServeStatic(pathname, response) {
+function tryServeStatic(request, pathname, response) {
   const normalizedPath = pathname === "/" ? "/index.html" : pathname
   const trimmedPath = normalizedPath.replace(/^\/+/, "")
   const publicFilePath = path.join(publicDir, trimmedPath)
   const distFilePath = path.join(distDir, trimmedPath)
 
   if (existsSync(publicFilePath)) {
-    sendFile(response, publicFilePath)
+    sendFile(request, response, publicFilePath)
     return true
   }
 
   if (existsSync(distFilePath)) {
-    sendFile(response, distFilePath)
+    sendFile(request, response, distFilePath)
     return true
   }
 
   return false
 }
 
-function tryServeFrontend(pathname, response) {
+function tryServeFrontend(request, pathname, response) {
   if (!existsSync(distDir)) {
     return false
   }
 
-  if (tryServeStatic(pathname, response)) {
+  if (tryServeStatic(request, pathname, response)) {
     return true
   }
 
@@ -1029,7 +1088,7 @@ function tryServeFrontend(pathname, response) {
     return false
   }
 
-  sendFile(response, indexPath)
+  sendFile(request, response, indexPath)
   return true
 }
 
@@ -1162,7 +1221,7 @@ const server = http.createServer(async (request, response) => {
     }
 
     if (request.method === "GET" || request.method === "HEAD") {
-      if (tryServeFrontend(pathname, response)) {
+      if (tryServeFrontend(request, pathname, response)) {
         return
       }
     }
