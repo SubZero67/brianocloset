@@ -29,7 +29,7 @@ function Checkout() {
   const [error, setError] = useState("")
   const [submitting, setSubmitting] = useState(false)
 
-  const shippingFee = useMemo(() => (cart.length > 0 ? 199 : 0), [cart.length])
+  const shippingFee = useMemo(() => 0, [])
   const grandTotal = cartTotal + shippingFee
 
   function handleChange(event) {
