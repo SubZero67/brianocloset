@@ -55,7 +55,7 @@ const brands = [
   },
 
   {
-    name: "Lambo",
+    name: "Lamborghini",
     image: lamborghiniBg,
     collabLogo: bocLambo
   },

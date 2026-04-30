@@ -378,7 +378,7 @@ function Admin() {
 
       {activeTab === "editor" && (
         <section className="glass-panel max-w-4xl rounded-[30px] p-6 sm:p-8">
-          <p className="section-label">{editingProductId ? "Update piece" : "New piece"}</p>
+          <p className="section-label">{editingProductId ? "Update product" : "New product"}</p>
 
           <form className="grid gap-4 md:grid-cols-2" onSubmit={handleProductSubmit}>
             <input

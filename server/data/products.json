@@ -266,38 +266,38 @@
   },
   {
     "id": 19,
-    "name": "Lambo Savile Bull Hoodie",
+    "name": "Lamborghini Savile Bull Hoodie",
     "price": 6499,
-    "brand": "Lambo",
+    "brand": "Lamborghini",
     "category": "Hoodie",
     "image": "/catalog/lambo/lambo-savile-bull-hoodie/01.png",
     "images": [
       "/catalog/lambo/lambo-savile-bull-hoodie/01.png",
       "/catalog/lambo/lambo-savile-bull-hoodie/02.png"
     ],
-    "description": "Lambo Savile Bull Hoodie is a premium Lambo hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
+    "description": "Lamborghini Savile Bull Hoodie is a premium Lamborghini hoodie with a confident oversized feel, elevated detailing, and a motorsport-inspired luxury finish.",
     "stock": 25,
     "isActive": true
   },
   {
     "id": 20,
-    "name": "Lambo Aurelio Polo T-shirt",
+    "name": "Lamborghini Aurelio Polo T-shirt",
     "price": 3999,
-    "brand": "Lambo",
+    "brand": "Lamborghini",
     "category": "Polo T-shirt",
     "image": "/catalog/lambo/lambo-aurelio-polo-t-shirt/01.jpeg",
     "images": [
       "/catalog/lambo/lambo-aurelio-polo-t-shirt/01.jpeg"
     ],
-    "description": "Lambo Aurelio Polo T-shirt is a polished Lambo polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "description": "Lamborghini Aurelio Polo T-shirt is a polished Lamborghini polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
     "stock": 25,
     "isActive": true
   },
   {
     "id": 21,
-    "name": "Lambo Milano Polo T-shirt",
+    "name": "Lamborghini Milano Polo T-shirt",
     "price": 3999,
-    "brand": "Lambo",
+    "brand": "Lamborghini",
     "category": "Polo T-shirt",
     "image": "/catalog/lambo/lambo-milano-polo-t-shirt/01.jpeg",
     "images": [
@@ -305,37 +305,37 @@
       "/catalog/lambo/lambo-milano-polo-t-shirt/02.jpeg",
       "/catalog/lambo/lambo-milano-polo-t-shirt/03.jpeg"
     ],
-    "description": "Lambo Milano Polo T-shirt is a polished Lambo polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
+    "description": "Lamborghini Milano Polo T-shirt is a polished Lamborghini polo with a smarter street-luxe profile, soft structure, and an understated motorsport edge.",
     "stock": 25,
     "isActive": true
   },
   {
     "id": 22,
-    "name": "Lambo Torino T-shirt",
+    "name": "Lamborghini Torino T-shirt",
     "price": 3299,
-    "brand": "Lambo",
+    "brand": "Lamborghini",
     "category": "T-shirts",
     "image": "/catalog/lambo/lambo-torino-t-shirt/01.jpeg",
     "images": [
       "/catalog/lambo/lambo-torino-t-shirt/01.jpeg",
       "/catalog/lambo/lambo-torino-t-shirt/02.jpeg"
     ],
-    "description": "Lambo Torino T-shirt is a premium Lambo tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "description": "Lamborghini Torino T-shirt is a premium Lamborghini tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
     "stock": 25,
     "isActive": true
   },
   {
     "id": 23,
-    "name": "Lambo Cortina T-shirt",
+    "name": "Lamborghini Cortina T-shirt",
     "price": 3299,
-    "brand": "Lambo",
+    "brand": "Lamborghini",
     "category": "T-shirts",
     "image": "/catalog/lambo/lambo-cortina-t-shirt/01.jpeg",
     "images": [
       "/catalog/lambo/lambo-cortina-t-shirt/01.jpeg",
       "/catalog/lambo/lambo-cortina-t-shirt/02.jpeg"
     ],
-    "description": "Lambo Cortina T-shirt is a premium Lambo tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
+    "description": "Lamborghini Cortina T-shirt is a premium Lamborghini tee with a clean silhouette, refined graphic presence, and an everyday luxury streetwear feel.",
     "stock": 25,
     "isActive": true
   },

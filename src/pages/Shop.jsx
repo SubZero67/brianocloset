@@ -154,7 +154,7 @@ function Shop() {
                 Available now
               </p>
               <h2 className="mt-2 font-serif text-3xl text-white">
-                {filteredProducts.length} piece{filteredProducts.length === 1 ? "" : "s"} in
+                {filteredProducts.length} product{filteredProducts.length === 1 ? "" : "s"} in
                 the current selection
               </h2>
             </div>

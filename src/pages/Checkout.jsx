@@ -137,7 +137,7 @@ function Checkout() {
           <p className="section-label">Checkout</p>
           <h1 className="editorial-title">Your bag is empty.</h1>
           <p className="mt-4 text-stone-300">
-            Add a few pieces first and come back when you are ready to move to payment.
+            Add a few products first and come back when you are ready to move to payment.
           </p>
           <Link to="/shop" className="outline-button mt-8">
             Continue Shopping

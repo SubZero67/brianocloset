@@ -87,7 +87,7 @@ function Home() {
 
               <div className="mt-8 grid grid-cols-2 gap-4 text-sm">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-white/45">Pieces</p>
+                  <p className="text-white/45">Product</p>
                   <p className="mt-3 text-2xl text-white">{activeProductCount}</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
