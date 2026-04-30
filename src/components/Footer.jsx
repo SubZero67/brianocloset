@@ -42,11 +42,7 @@ function Footer() {
           <a className="text-white transition hover:text-[#d6b37b]" href="mailto:tejasachar46@gmail.com">
             Tejas B M
           </a>
-          {" "}(
-          <a className="text-white transition hover:text-[#d6b37b]" href="mailto:tejasachar46@gmail.com">
-            tejasachar46@gmail.com
-          </a>
-          ) |{" "}
+          {" "}|{" "}
           <a
             className="text-white transition hover:text-[#d6b37b]"
             href="https://github.com/SubZero67"
