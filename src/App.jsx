@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
 import Product from "./pages/Product"
@@ -9,6 +10,7 @@ import CheckoutSetup from "./pages/CheckoutSetup"
 import CheckoutSuccess from "./pages/CheckoutSuccess"
 import CheckoutCancel from "./pages/CheckoutCancel"
 import Admin from "./pages/Admin"
+import InfoPage from "./pages/InfoPage"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -42,7 +44,19 @@ function App() {
 
         <Route path="/admin" element={<Admin />} />
 
+        <Route path="/contact" element={<InfoPage />} />
+
+        <Route path="/shipping" element={<InfoPage />} />
+
+        <Route path="/returns" element={<InfoPage />} />
+
+        <Route path="/privacy" element={<InfoPage />} />
+
+        <Route path="/terms" element={<InfoPage />} />
+
       </Routes>
+
+      <Footer />
 
     </BrowserRouter>
 
