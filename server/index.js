@@ -288,6 +288,12 @@ async function markOrderPaid(merchantOrderId, paymentMeta = {}) {
   }
 
   if (order.paymentStatus === "paid") {
+    order.paymentMeta = {
+      ...(order.paymentMeta || {}),
+      ...paymentMeta
+    }
+    order.updatedAt = new Date().toISOString()
+    await writeCollection("orders", orders)
     return order
   }
 
@@ -320,6 +326,85 @@ async function markOrderPaid(merchantOrderId, paymentMeta = {}) {
 
 function findOrderByRazorpayOrderId(orders, razorpayOrderId) {
   return orders.find((entry) => entry.paymentMeta?.razorpayOrderId === razorpayOrderId)
+}
+
+function findOrderByRazorpayPaymentId(orders, razorpayPaymentId) {
+  return orders.find((entry) => entry.paymentMeta?.razorpayPaymentId === razorpayPaymentId)
+}
+
+async function markOrderPaymentFailed(order, paymentMeta = {}) {
+  if (order.paymentStatus === "paid" || order.paymentStatus === "refunded") {
+    return order
+  }
+
+  const orders = await readCollection("orders")
+  const storedOrder = orders.find((entry) => entry.id === order.id)
+
+  if (!storedOrder) {
+    throw new Error("Order not found.")
+  }
+
+  storedOrder.paymentStatus = "failed"
+  storedOrder.paymentMeta = {
+    ...(storedOrder.paymentMeta || {}),
+    ...paymentMeta
+  }
+  storedOrder.updatedAt = new Date().toISOString()
+
+  await writeCollection("orders", orders)
+  await writeAuditLog({
+    type: "order_payment_failed",
+    merchantOrderId: storedOrder.merchantOrderId,
+    orderId: storedOrder.id
+  }).catch(() => {})
+
+  return storedOrder
+}
+
+async function markOrderPaymentRefunded(order, paymentMeta = {}) {
+  const orders = await readCollection("orders")
+  const storedOrder = orders.find((entry) => entry.id === order.id)
+
+  if (!storedOrder) {
+    throw new Error("Order not found.")
+  }
+
+  storedOrder.paymentStatus = "refunded"
+  if (!["shipped", "delivered"].includes(storedOrder.orderStatus)) {
+    storedOrder.orderStatus = "cancelled"
+  }
+  storedOrder.paymentMeta = {
+    ...(storedOrder.paymentMeta || {}),
+    ...paymentMeta
+  }
+  storedOrder.updatedAt = new Date().toISOString()
+
+  await writeCollection("orders", orders)
+  await writeAuditLog({
+    type: "order_payment_refunded",
+    merchantOrderId: storedOrder.merchantOrderId,
+    orderId: storedOrder.id
+  }).catch(() => {})
+
+  return storedOrder
+}
+
+async function recordOrderWebhookMeta(order, paymentMeta = {}) {
+  const orders = await readCollection("orders")
+  const storedOrder = orders.find((entry) => entry.id === order.id)
+
+  if (!storedOrder) {
+    throw new Error("Order not found.")
+  }
+
+  storedOrder.paymentMeta = {
+    ...(storedOrder.paymentMeta || {}),
+    ...paymentMeta
+  }
+  storedOrder.updatedAt = new Date().toISOString()
+
+  await writeCollection("orders", orders)
+  return storedOrder
 }
 
 async function fetchRazorpayPaymentsForOrder(razorpayOrderId) {
@@ -564,35 +649,62 @@ async function handleRazorpayWebhook(request, response) {
   }
 
   const payload = rawBody ? JSON.parse(rawBody) : {}
+  const eventName = String(payload?.event || "unknown")
   const payment = payload?.payload?.payment?.entity
+  const refund = payload?.payload?.refund?.entity
+  const razorpayOrder = payload?.payload?.order?.entity
   const razorpayOrderId = payment?.order_id
+    || razorpayOrder?.id
+    || refund?.notes?.razorpayOrderId
   const razorpayPaymentId = payment?.id
+    || refund?.payment_id
   const paymentStatus = String(payment?.status || "").toLowerCase()
+  const refundStatus = String(refund?.status || "").toLowerCase()
 
-  if (!razorpayOrderId || !razorpayPaymentId || !["captured", "authorized"].includes(paymentStatus)) {
+  if (!razorpayOrderId && !razorpayPaymentId) {
     sendJson(request, response, 200, {
-      received: true
+      received: true,
+      ignored: true
     })
     return
   }
 
   const orders = await readCollection("orders")
-  const order = findOrderByRazorpayOrderId(orders, razorpayOrderId)
+  const order = razorpayOrderId
+    ? findOrderByRazorpayOrderId(orders, razorpayOrderId)
+    : findOrderByRazorpayPaymentId(orders, razorpayPaymentId)
 
   if (!order) {
-    sendJson(request, response, 404, {
+    sendJson(request, response, 200, {
+      received: true,
+      ignored: true,
       message: "Order not found for this Razorpay webhook."
     })
     return
   }
 
-  await markOrderPaid(order.merchantOrderId, {
+  const webhookMeta = {
     ...(order.paymentMeta || {}),
-    razorpayOrderId,
-    razorpayPaymentId,
-    webhookEvent: payload?.event || "payment.unknown",
+    ...(razorpayOrderId ? { razorpayOrderId } : {}),
+    ...(razorpayPaymentId ? { razorpayPaymentId } : {}),
+    ...(refund?.id ? { razorpayRefundId: refund.id } : {}),
+    webhookEvent: eventName,
     webhookReceivedAt: new Date().toISOString()
-  })
+  }
+
+  if (eventName === "order.paid" || ["captured", "authorized"].includes(paymentStatus)) {
+    await markOrderPaid(order.merchantOrderId, webhookMeta)
+  } else if (eventName === "payment.failed" || paymentStatus === "failed") {
+    await markOrderPaymentFailed(order, {
+      ...webhookMeta,
+      failureCode: payment?.error_code || "",
+      failureDescription: payment?.error_description || ""
+    })
+  } else if (eventName.startsWith("refund.") && refundStatus === "processed") {
+    await markOrderPaymentRefunded(order, webhookMeta)
+  } else {
+    await recordOrderWebhookMeta(order, webhookMeta)
+  }
 
   sendJson(request, response, 200, {
     received: true
